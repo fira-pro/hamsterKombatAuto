@@ -35,27 +35,27 @@ Collects coins🪙 generated passively every 3 hours, claims daily streak, Morse
   - Install required packages: `pip install -r requirements.txt`
   - Add your access tokens to the file access_tokens.json array
 
-    ```json
-    [
-      {
-        "name": "user1",
-        "value": "accessTokenForThe1stUser"
-      },
-      {
-        "name": "user2",
-        "value": "accessTokenForThe2ndUser"
-      }
-    ]
-    ```
+  ```json
+  [
+    {
+      "name": "user1",
+      "value": "accessTokenForThe1stUser"
+    },
+    {
+      "name": "user2",
+      "value": "accessTokenForThe2ndUser"
+    }
+  ]
+  ```
 
-    - Add your Telegram bot token to a .env file
+  - Add your Telegram bot token to a .env file
 
-    ```shell
-    BOT_TOKEN=bot12345678:123abcd
-    ```
+  ```shell
+  BOT_TOKEN=bot12345678:123abcd
+  ```
 
-    - Run `python3 main.py`.
-    - To keep the script running continuously, consider using a VPS with [tmux](https://github.com/tmux/tmux/wiki)
+  - Run `python3 main.py`.
+  - To keep the script running continuously, consider using a VPS with [tmux](https://github.com/tmux/tmux/wiki)
 
 > [!NOTE]
 > This project was developed in a short period and may contain bugs or incomplete features. Please use with caution and report any issues you encounter.

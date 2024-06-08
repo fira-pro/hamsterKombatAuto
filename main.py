@@ -85,7 +85,7 @@ while True:
 
                 daily_cipher = hamster.claim_daily_cipher(decoded_cipher)
 
-                msg += f"\n<b>Daily cipher claimed</b>: {format(daily_cipher['bonusCoins'], ',')}"
+                msg += f"\n<b>Daily cipher claimed</b>: {format(daily_cipher['bonusCoins'], ',')} -> <i>{decoded_cipher}</i>"
 
             else:
                 msg += f"\n<b>Daily cipher</b>: Already Claimed"

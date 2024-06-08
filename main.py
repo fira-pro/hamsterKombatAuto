@@ -28,7 +28,7 @@ def notify(chat_id: str = "1042334802", msg: str = "hi") -> None:
         "chat_id": chat_id,
         "disable_notification": True,
         "parse_mode": "HTML",
-        "text": "up",
+        "text": msg,
     }
     requests.post(url, data=data)
 
@@ -97,5 +97,7 @@ while True:
             error_msg = f"{time.asctime()}: Error occurred for {token['name']} token, Error: {str(e)}"
             print(error_msg)
             notify(error_msg)
+
+    print("Sleeping...")
 
     time.sleep(60 * 60 * 3)

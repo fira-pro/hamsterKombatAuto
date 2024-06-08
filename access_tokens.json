@@ -1,0 +1,10 @@
+[
+  {
+    "name": "user1",
+    "value": "accessTokenForThe1stUser"
+  },
+  {
+    "name": "user2",
+    "value": "accessTokenForThe2ndUser"
+  }
+]

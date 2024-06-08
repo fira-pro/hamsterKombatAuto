@@ -50,7 +50,7 @@ class HamsterKombat:
             self.tg_user_info = res_json["telegramUser"]
 
         except Exception as e:
-            raise Exception("Auth Status failed,", e)
+            raise Exception("Auth Status failed, Error", e, "resp: ", res.text)
 
     def config(self) -> None:
         path = "clicker/config"
@@ -64,7 +64,7 @@ class HamsterKombat:
             self.daily_cipher = res.json()["dailyCipher"]
 
         except Exception as e:
-            raise Exception("Config failed,", e)
+            raise Exception("Config failed,", e, "resp: ", res.text)
 
     def sync(self) -> None:
         path = "clicker/sync"
@@ -77,7 +77,7 @@ class HamsterKombat:
             self.click_user = res.json()["clickerUser"]
 
         except Exception as e:
-            raise Exception("Sync failed,", e)
+            raise Exception("Sync failed,", e, "resp: ", res.text)
 
     def tap(self, tap_count: int = 1) -> dict:
         path = "clicker/tap"
@@ -96,7 +96,7 @@ class HamsterKombat:
             self.click_user = res.json()["clickerUser"]
 
         except Exception as e:
-            raise Exception("Tap failed,", e)
+            raise Exception("Tap failed,", e, "resp: ", res.text)
 
     def list_tasks(self) -> None:
         path = "clicker/list-tasks"
@@ -109,7 +109,7 @@ class HamsterKombat:
             self.tasks = res.json()["tasks"]
 
         except Exception as e:
-            raise Exception("List tasks failed,", e)
+            raise Exception("List tasks failed,", e, "resp: ", res.text)
 
     def boosts_for_buy(self) -> None:
         path = "clicker/boosts-for-buy"
@@ -122,7 +122,7 @@ class HamsterKombat:
             self.boosts_for_buy = res.json()["boostsForBuy"]
 
         except Exception as e:
-            raise Exception("Boosts for buy failed,", e)
+            raise Exception("Boosts for buy failed,", e, "resp: ", res.text)
 
     def buy_boost(self, id: str) -> None:
         path = "clicker/buy-boost"
@@ -137,7 +137,7 @@ class HamsterKombat:
             self.click_user = res.json()["clickerUser"]
 
         except Exception as e:
-            raise Exception("Buying boost failed,", e)
+            raise Exception("Buying boost failed,", e, "resp: ", res.text)
 
     def check_task(self, task_id: str) -> dict:
         path = "clicker/check-task"
@@ -152,7 +152,7 @@ class HamsterKombat:
             return res.json()["task"]
 
         except Exception as e:
-            raise Exception("Check task failed,", e)
+            raise Exception("Check task failed,", e, "resp: ", res.text)
 
     def claim_daily_cipher(self, cipher_text: str) -> None:
         path = "clicker/claim-daily-cipher"

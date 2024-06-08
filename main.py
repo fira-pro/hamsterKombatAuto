@@ -10,6 +10,7 @@ import os
 load_dotenv()
 BOT_TOKEN = value = os.getenv("BOT_TOKEN")
 
+# sample access tokens, needs changing
 access_tokens = [
     {
         "name": "fira",

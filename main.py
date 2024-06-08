@@ -41,7 +41,7 @@ while True:
         try:
             hamster = HamsterKombat(token["value"])
             msg = f"<i>{hamster.tg_user_info['firstName']}</i>"
-            msg += f"\n<b>Passively Earned</b>: {format(hamster.click_user['lastPassiveEarn'], ',')}"
+            msg += f"\n<b>Passively Earned</b>: {format(int(hamster.click_user['lastPassiveEarn']), ',')}"
 
             # Claim daily streak if available
             if streak_days := next(

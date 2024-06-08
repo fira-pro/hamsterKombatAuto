@@ -45,7 +45,7 @@ class HamsterKombat:
         try:
             res_json = res.json()
             if res_json["status"] != "Ok":
-                raise Exception("Auth status is not ok", res_json["status"])
+                raise Exception("Auth status is not ok", res_json)
 
             self.tg_user_info = res_json["telegramUser"]
 

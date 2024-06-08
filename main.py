@@ -2,6 +2,7 @@ import time
 from hamster_kombat import HamsterKombat
 import requests
 from util import Morse
+import json
 
 from dotenv import load_dotenv
 import os
@@ -10,17 +11,11 @@ import os
 load_dotenv()
 BOT_TOKEN = value = os.getenv("BOT_TOKEN")
 
-# sample access tokens, needs changing
-access_tokens = [
-    {
-        "name": "fira",
-        "value": "1716824639522uPRG0keQZZX58Xcg68z0iSZOGzJh6KdZFubkMOy8fYgksOYXOFJLPjkIkgbGuY7M1042334802",
-    },
-    {
-        "name": "0xd",
-        "value": "1716892134086wWcCyoCqFjUmksKOASmc4BzT6EkwfMta0ar6IVH330zDVyew7tJEuc0Tcpao4xDC6482218185",
-    },
-]
+
+# Load access tokens from a JSON file
+# The easiest way to get access token of TG user for the bot is through MITM
+with open("access_tokens.json", "r") as json_file:
+    access_tokens = json.load(json_file)
 
 
 def notify(chat_id: str = "1042334802", msg: str = "hi") -> None:

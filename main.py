@@ -97,7 +97,7 @@ while True:
         except Exception as e:
             error_msg = f"{time.asctime()}: Error occurred for {token['name']} token, Error: {str(e)}"
             print(error_msg)
-            notify(error_msg)
+            notify(msg=error_msg)
 
     print("Sleeping...")
 

@@ -13,6 +13,18 @@ BOT_TOKEN = value = os.getenv("BOT_TOKEN")
 
 # Load access tokens from a JSON file
 # The easiest way to get access token of TG user for the bot is through MITM
+# the file contains an array of JSON object with token name and token value properties
+# [
+#   {
+#     "name": "user1",
+#     "value": "123456789abcd"
+#   },
+#   {
+#     "name": "user2",
+#     "value": "123456789abcd"
+#   }
+# ]
+
 with open("access_tokens.json", "r") as json_file:
     access_tokens = json.load(json_file)
 
@@ -30,8 +42,8 @@ def notify(chat_id: str = "1042334802", msg: str = "hi") -> None:
 
 while True:
     for token in access_tokens:
-        # Login and claim the coins the bot worked
 
+        # Login and claim the coins the bot worked
         try:
             hamster = HamsterKombat(token["value"])
             msg = f"<i>{hamster.tg_user_info['firstName']}</i>"
@@ -96,4 +108,5 @@ while True:
 
     print("Sleeping...")
 
+    # sleep for 3 hrs
     time.sleep(60 * 60 * 3)

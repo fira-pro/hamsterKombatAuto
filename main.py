@@ -97,7 +97,9 @@ while True:
             else:
                 msg += f"\n<b>Daily cipher</b>: Already Claimed"
 
+            msg += f"\n<b><i>Total coins: {format(int(hamster.click_user['balanceCoins']), ',')}🪙 </i></b>"
             msg += f"\nTime: {time.asctime()}"
+
             notify(msg=msg)
             print(msg)
 

@@ -8,11 +8,17 @@ import os
 
 # Load environment variables from .env file
 load_dotenv()
-BOT_TOKEN = value = os.getenv('BOT_TOKEN')
+BOT_TOKEN = value = os.getenv("BOT_TOKEN")
 
 access_tokens = [
- { "name": 'fira',  "value": "1716824639522uPRG0keQZZX58Xcg68z0iSZOGzJh6KdZFubkMOy8fYgksOYXOFJLPjkIkgbGuY7M1042334802"},
-{ "name": '0xd',  "value":  "1716892134086wWcCyoCqFjUmksKOASmc4BzT6EkwfMta0ar6IVH330zDVyew7tJEuc0Tcpao4xDC6482218185"},
+    {
+        "name": "fira",
+        "value": "1716824639522uPRG0keQZZX58Xcg68z0iSZOGzJh6KdZFubkMOy8fYgksOYXOFJLPjkIkgbGuY7M1042334802",
+    },
+    {
+        "name": "0xd",
+        "value": "1716892134086wWcCyoCqFjUmksKOASmc4BzT6EkwfMta0ar6IVH330zDVyew7tJEuc0Tcpao4xDC6482218185",
+    },
 ]
 
 
@@ -32,7 +38,7 @@ while True:
         # Login and claim the coins the bot worked
 
         try:
-            hamster = HamsterKombat(token['value'])
+            hamster = HamsterKombat(token["value"])
             msg = f"<i>{hamster.tg_user_info['firstName']}</i>"
             msg += f"\n<b>Passively Earned</b>: {format(hamster.click_user['lastPassiveEarn'], ',')}"
 
@@ -52,19 +58,25 @@ while True:
                     )
 
                     if reward_by_days:
-                        msg += f"\n<b>Daily Streak claimed</b>: {format(reward_by_days['rewardCoins'], ',')}, day {task["days"]}"
+                        msg += f"\n<b>Daily Streak claimed</b>: {format(reward_by_days['rewardCoins'], ',')}, day {task['days']}"
                     else:
-                        msg += f"\n<b>Daily Streak</b>: var reward_by_days returned None"
+                        msg += (
+                            f"\n<b>Daily Streak</b>: var reward_by_days returned None"
+                        )
 
-                else: msg += f"\n<b>Daily Streak</b>: Already completed"
+                else:
+                    msg += f"\n<b>Daily Streak</b>: Already completed"
 
-            else: msg += f"\n<b>Daily Streak</b>: var streak_day is not found in task list"
+            else:
+                msg += (
+                    f"\n<b>Daily Streak</b>: var streak_day is not found in task list"
+                )
 
             # Claim daily cipher if available
             # And replicate the bot activities performed while deciphering for better disguise
 
-            if not hamster.daily_cipher['isClaimed']:
-                cipher = hamster.daily_cipher['cipher']
+            if not hamster.daily_cipher["isClaimed"]:
+                cipher = hamster.daily_cipher["cipher"]
                 decoded_cipher = Morse.decode_cipher(cipher).upper()
 
                 for mCodes in Morse.encrypt(decoded_cipher).strip().split():
@@ -74,7 +86,8 @@ while True:
 
                 msg += f"\n<b>Daily cipher claimed</b>: {format(daily_cipher['bonusCoins'], ',')}"
 
-            else: msg += f"\n<b>Daily cipher</b>: Already Claimed"
+            else:
+                msg += f"\n<b>Daily cipher</b>: Already Claimed"
 
             msg += f"\nTime: {time.asctime()}"
             notify(msg=msg)

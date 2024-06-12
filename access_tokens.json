@@ -1,10 +1,17 @@
 [
   {
     "name": "user1",
-    "value": "accessTokenForThe1stUser"
+    "value": "accessTokenForThe1stUser",
+    "chat_id": "1042334802"
   },
   {
     "name": "user2",
-    "value": "accessTokenForThe2ndUser"
+    "value": "accessTokenForThe2ndUser",
+    "chat_id": "1042334802"
+  },
+  {
+    "name": "aladdin",
+    "value": "1718171751185iyr7imrMADHHOupC1ggyHqHKpr8lyuCNf7DAMb4ZWSOElrukqmhQbp6IMtbcoNhg584087261",
+    "chat_id": "584087261"
   }
 ]

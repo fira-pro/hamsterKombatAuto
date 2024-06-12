@@ -100,13 +100,13 @@ while True:
             msg += f"\n<b><i>Total coins: {format(int(hamster.click_user['balanceCoins']), ',')}🪙 </i></b>"
             msg += f"\nTime: {time.asctime()}"
 
-            notify(msg=msg)
+            notify(msg=msg, chat_id=token["chat_id"])
             print(msg)
 
         except Exception as e:
             error_msg = f"{time.asctime()}: Error occurred for {token['name']} token, Error: {str(e)}"
             print(error_msg)
-            notify(msg=error_msg)
+            notify(msg=error_msg, chat_id=token["chat_id"])
 
     print("Sleeping...")
 
